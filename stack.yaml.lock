@@ -3,7 +3,70 @@
 # For more information, please see the documentation at:
 #   https://docs.haskellstack.org/en/stable/topics/lock_files
 
-packages: []
+packages:
+- completed:
+    hackage: yaftee-0.1.0.0@sha256:777a4d5c12382210e9c7d97ce1d716b04df96dc1a1b6701b2c86c6e1c1e65fcb,1943
+    pantry-tree:
+      sha256: faae28ff3c9b23f30b6c4d56c76c07eb879b3e158af3b74b39c66ef6187e0519
+      size: 372
+  original:
+    hackage: yaftee-0.1.0.0
+- completed:
+    hackage: yaftee-basic-monads-0.1.0.0@sha256:6ac2b56a59177bc7896f459d8caa0594e00dc315d5a647daedb2a5a579b98d55,2382
+    pantry-tree:
+      sha256: 4fe88b20bee7ebce1c073cca9696996b44598f9cf2f542710be210fe4c6151ef
+      size: 978
+  original:
+    hackage: yaftee-basic-monads-0.1.0.0
+- completed:
+    hackage: yaftee-conduit-0.1.0.0@sha256:ea3c0eea2ee059e1c8ea875ae306976f7e072db480e1cd0c695a9b720114e2ce,2237
+    pantry-tree:
+      sha256: dfe9fb08d306b41e069389b82ee8a8857980c7af5f227722fc045907f002ecaf
+      size: 616
+  original:
+    hackage: yaftee-conduit-0.1.0.0
+- completed:
+    hackage: higher-order-freer-monad-0.1.0.0@sha256:cb577292506e6f906528813f339966874c7c7a23a76cc4b5eabdd600f2843c2d,2038
+    pantry-tree:
+      sha256: a5733f3e7b315da2f2f898201da69dee0fdbe10a37d0686a4bcc381f13bf869a
+      size: 392
+  original:
+    hackage: higher-order-freer-monad-0.1.0.0
+- completed:
+    hackage: higher-order-open-union-0.1.0.1@sha256:d58ef8d765a72af539b26c52fc3187c479f326f5ef6769244c3e7614336f0bdd,2024
+    pantry-tree:
+      sha256: 342311eacbd28872cd17200aeaf1b3c74aedb5ba0edf3abb91635f66797fe0b5
+      size: 515
+  original:
+    hackage: higher-order-open-union-0.1.0.1
+- completed:
+    hackage: freer-base-classes-0.1.0.0@sha256:38e4853293416518606ea78699a57025b3595a8fbec36e8a26cce49e18fa1daf,1895
+    pantry-tree:
+      sha256: ea291a883003d80cdc2bcc4e3589e495ae1559e96e8368fe94ea724078f01476
+      size: 463
+  original:
+    hackage: freer-base-classes-0.1.0.0
+- completed:
+    hackage: ftcqueue-0.1.0.1@sha256:2fdb84a50d3281b622112cd8a4573b5a087043d598e5e47377e1bbc504472d2a,1706
+    pantry-tree:
+      sha256: 1704d5ac9522c7f2800a663b3e837d1069720a7f1821595a3d668a46609631b9
+      size: 363
+  original:
+    hackage: ftcqueue-0.1.0.1
+- completed:
+    hackage: bitarray-bs-0.1.0.0@sha256:381c747669e6eee3950d2f091432f02ce5be531c155cbae83a7e12ed2487be98,1884
+    pantry-tree:
+      sha256: a18ab03c2e292c193eb3501e39c95849274695fd90c9d801b4b442aa34022876
+      size: 522
+  original:
+    hackage: bitarray-bs-0.1.0.0
+- completed:
+    hackage: tools-yj-0.1.0.45@sha256:e342ee6fde63d5a3dc05405c7cca61e36eea2315cba1706cbd2bc8c65995db88,2545
+    pantry-tree:
+      sha256: 2ab6e9e8288431766b0b2bddddbda28290dbb94535fe135e0cb3b72cde74945f
+      size: 1835
+  original:
+    hackage: tools-yj-0.1.0.45
 snapshots:
 - completed:
     sha256: 92becf9417de918f477cc79583b70700cbead6c5028fc4c4415f04fab5fb5354
