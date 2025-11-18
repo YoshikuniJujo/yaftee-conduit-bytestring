@@ -1,5 +1,5 @@
 name:                yaftee-conduit-bytestring
-version:             0.1.0.0
+version:             0.1.0.1
 github:              "YoshikuniJujo/yaftee-conduit-bytestring"
 license:             BSD-3-Clause
 author:              "Yoshikuni Jujo"
@@ -28,6 +28,7 @@ dependencies:
 - yaftee >= 0.1 && < 0.2
 - yaftee-basic-monads >= 0.1 && < 0.2
 - yaftee-conduit >= 0.1 && < 0.2
+- higher-order-freer-monad >= 0.1 && < 0.2
 - higher-order-open-union >= 0.1 && < 0.2
 - bitarray-bs >= 0.1 && < 0.2
 - tools-yj >= 0.1 && < 0.2

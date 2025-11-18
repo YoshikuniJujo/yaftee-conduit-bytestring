@@ -1,5 +1,5 @@
 {-# LANGUAGE ImportQualifiedPost #-}
-{-# LANGUAGE BlockArguments, LambdaCase #-}
+{-# LANGUAGE BlockArguments, LambdaCase, OverloadedStrings #-}
 {-# LANGUAGE ExplicitForAll #-}
 {-# LANGUAGE RequiredTypeArguments #-}
 {-# LANGUAGE KindSignatures, TypeOperators #-}
@@ -8,6 +8,10 @@
 {-# OPTIONS_GHC -Wall -fno-warn-tabs #-}
 
 module Control.Monad.Yaftee.Pipe.ByteString.Lazy (
+
+	-- * FROM/TO
+
+	from, to,
 
 	-- * HANDLE
 
@@ -27,9 +31,11 @@ import Control.Monad.Yaftee.Eff qualified as Eff
 import Control.Monad.Yaftee.Pipe qualified as Pipe
 import Control.Monad.Yaftee.State qualified as State
 import Control.Monad.Yaftee.IO qualified as IO
+import Control.Monad.HigherFreer qualified as F
 import Control.HigherOpenUnion qualified as U
 import Data.HigherFunctor qualified as HFunctor
 import Data.Bits
+import Data.Maybe
 import Data.Bool
 import Data.Int
 import Data.ByteString qualified as BS
@@ -93,3 +99,15 @@ lengthFromByteString n0 = (Length <$>) . go n0 . LBS.unpack
 	go n (w : ws)
 		| n > 0 = (fromIntegral w .|.) . (`shiftL` 8) <$> go (n - 1) ws
 	go _ _ = Nothing
+
+from :: U.Member Pipe.P es => Int64 -> LBS.ByteString -> Eff.E es i LBS.ByteString ()
+from _ "" = pure ()
+from n s = Pipe.yield t >> from n d
+	where (t, d) = LBS.splitAt n s
+
+to :: HFunctor.Tight (U.U es) => Eff.E (Pipe.P ': es) i LBS.ByteString r -> Eff.E es i o LBS.ByteString
+to p = (fromJust <$>) . Pipe.run $ fromPure . snd <$> p Pipe.=$= fix \go ->
+	Pipe.isMore >>= bool (pure "") (LBS.append <$> Pipe.await <*> go)
+
+fromPure :: F.H h i o a -> a
+fromPure = \case F.Pure x -> x; _ -> error "not Pure"

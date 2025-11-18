@@ -5,7 +5,7 @@ cabal-version: 2.2
 -- see: https://github.com/sol/hpack
 
 name:           yaftee-conduit-bytestring
-version:        0.1.0.0
+version:        0.1.0.1
 synopsis:       Yaftee Conduit tools for ByteString
 description:    Please see the README on GitHub at <https://github.com/YoshikuniJujo/yaftee-conduit-bytestring#readme>
 category:       Control
@@ -51,6 +51,7 @@ library
     , base >=4.7 && <5
     , bitarray-bs ==0.1.*
     , bytestring ==0.12.*
+    , higher-order-freer-monad ==0.1.*
     , higher-order-open-union ==0.1.*
     , tools-yj ==0.1.*
     , typelevel-tools-yj ==0.1.*
@@ -74,6 +75,7 @@ test-suite yaftee-conduit-bytestring-test
     , base >=4.7 && <5
     , bitarray-bs ==0.1.*
     , bytestring ==0.12.*
+    , higher-order-freer-monad ==0.1.*
     , higher-order-open-union ==0.1.*
     , tools-yj ==0.1.*
     , typelevel-tools-yj ==0.1.*
